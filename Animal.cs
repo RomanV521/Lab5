@@ -7,7 +7,7 @@ namespace Lab5
     {
         private readonly string _name;
         private string _currentActivity;
-        private string[] activityList = { "No activity", "Eat", "Sleep", "Walk" };
+        private static readonly string[] _activityList = { "No activity", "Eat", "Sleep", "Walk" };
 
         /// <summary>
         /// Имя/Кличка
@@ -47,42 +47,31 @@ namespace Lab5
             }
         }
 
+        public string[] ActivityList
+        {
+            get { return _activityList; }
+        }
+
         public Animal(string name)
         {
-            CurrentActivity = activityList[0];
+            CurrentActivity = _activityList[0];
             Name = name;
         }
 
         /// <summary>
         /// Метод который изменяет статус деятельности на "Eat"
         /// </summary>
-        public void Eat()
-        {
-            if(CurrentActivity != activityList[1])
-            {
-                CurrentActivity = activityList[1];
-            }
-        }
+        public abstract void Eat();
+        
         /// <summary>
         /// Метод который изменяет статус деятельности на "Sleep"
         /// </summary>
-        public void Sleep()
-        {
-            if (CurrentActivity != activityList[2])
-            {
-                CurrentActivity = activityList[2];
-            }
-        }
+        /// 
+        public abstract void Sleep();
         /// <summary>
         /// Метод который изменяет статус деятельности на "Walk"
         /// </summary>
-        public void Walk()
-        {
-            if (CurrentActivity != activityList[3])
-            {
-                CurrentActivity = activityList[3];
-            }
-        }
+        public abstract void Walk();
 
         public override string ToString()
         {

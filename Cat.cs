@@ -60,6 +60,40 @@ namespace Lab5
             JumpHeight = jumpHeight;
         }
 
+        /// <summary>
+        /// Инициализация метода Eat из интерфейса IAnimal
+        /// </summary>
+        public override void Eat()
+        {
+            if (CurrentActivity != ActivityList[1])
+            {
+                CurrentActivity = ActivityList[1];
+            }
+        }
+
+        /// <summary>
+        /// Инициализация метода Sleep из интерфейса IAnimal
+        /// </summary>
+        public override void Sleep()
+        {
+            if (CurrentActivity != ActivityList[2])
+            {
+                CurrentActivity = ActivityList[2];
+            }
+        }
+
+
+        /// <summary>
+        /// Инициализация метода Walk из интерфейса IAnimal
+        /// </summary>
+        public override void Walk()
+        {
+            if (CurrentActivity != ActivityList[3])
+            {
+                CurrentActivity = ActivityList[3];
+            }
+        }
+
         public override string ToString()
         {
             return $"\tCat: Name: {base.ToString()}, Lazy: {(Lazy == true ? "Yes" : "No")}, Have wool: {(HaveWool == true ? "Yes" : "No")}, Jump height: {JumpHeight}m";

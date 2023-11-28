@@ -67,6 +67,40 @@ namespace Lab5
             Purebred = purebred;
         }
 
+        /// <summary>
+        /// Инициализация метода Eat из интерфейса IAnimal
+        /// </summary>
+        public override void Eat()
+        {
+            if (CurrentActivity != ActivityList[1])
+            {
+                CurrentActivity = ActivityList[1];
+            }
+        }
+
+        /// <summary>
+        /// Инициализация метода Sleep из интерфейса IAnimal
+        /// </summary>
+        public override void Sleep()
+        {
+            if (CurrentActivity != ActivityList[2])
+            {
+                CurrentActivity = ActivityList[2];
+            }
+        }
+
+
+        /// <summary>
+        /// Инициализация метода Walk из интерфейса IAnimal
+        /// </summary>
+        public override void Walk()
+        {
+            if (CurrentActivity != ActivityList[3])
+            {
+                CurrentActivity = ActivityList[3];
+            }
+        }
+
         public override string ToString()
         {
             return $"\tDog: {base.ToString()}, Breed: {Breed}, Color: {Color}, Purebred: {(Purebred == true ? "Yes" : "No")}";
